@@ -1,0 +1,53 @@
+<ion-header>
+
+  <ion-toolbar color="uva_color">
+
+    <button ion-button clear color="light" menuToggle>
+      <ion-icon class="logo_icon" name="menu"></ion-icon>
+    </button>
+
+    <img float-end class="logo" src="../../assets/UVA.png" height="25px" item-end>
+
+
+
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content text-center>
+
+  <div>
+    <div class="lugar-actual">
+      <img [src]="uva_lugar[2]">
+    </div>
+    <ion-card class="tarjeta-presentacion-lugar">
+      <ion-card-header>
+        <h1>{{ uva_lugar[1] }}</h1>
+      </ion-card-header>
+      <ion-card-content>
+        Revisa los eventos que se presentaran aquí proximamente.
+      </ion-card-content>
+    </ion-card>
+
+  </div>
+
+  <ion-card *ngFor="let publicacion of uva_publicaciones | async" (click)="uva_pagina(publicacion)">
+    <img class="img-tarjeta" [src]="publicacion.img"/>
+    <ion-card-content>
+      <ion-card-title text-left>
+        {{ publicacion.title }}
+      </ion-card-title>
+      <p text-left>
+        {{publicacion.phrase}}
+      </p>
+
+      <ion-item>
+        <button item-end clear ion-button icon-only>
+          <ion-icon name="arrow-forward"></ion-icon>
+        </button>
+      </ion-item>
+
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

@@ -1,0 +1,25 @@
+<ion-header>
+
+  <ion-navbar color="uva_color">
+    <ion-title>{{ title }}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <img align-self-center [src]="info.img">
+
+  <br><hr>
+
+  <p class="descripcion" text-xl-center>
+    {{ info.description }}
+  </p>
+  <div *ngIf="simple.info_link[0]">
+    <p text-right>
+      <a [href]="simple.info_link[1]">Más información <ion-icon name="arrow-forward"></ion-icon></a>
+    </p>
+  </div>
+
+</ion-content>

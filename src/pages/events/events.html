@@ -1,0 +1,32 @@
+
+<ion-header>
+
+  <ion-navbar color="uva_color">
+    <ion-title> {{ title }} </ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+  <ion-list>
+
+    <ion-item *ngFor="let item of events">
+      <ion-row>
+        <ion-col>
+          <img [src]="item.img">
+        </ion-col>
+        <ion-col>
+          <h2>{{ item.title }}</h2>
+          <p>{{ item.date }}<br> {{ item.time }}</p>
+          <button *ngIf="item.show_info_button" ion-button icon-end clear item-end (click)="openSimple(item)">
+            Más información <ion-icon end name="arrow-forward"></ion-icon>
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+
+  </ion-list>
+
+</ion-content>

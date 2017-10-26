@@ -1,1 +1,22 @@
-<ion-nav [root]="rootPage"></ion-nav>
+<ion-menu [content]="content">
+  <ion-header>
+    <ion-toolbar color="uva_color">
+      <ion-title><h1>Menu</h1></ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <ion-list no-lines>
+      <button ion-item menuClose>
+        <h1><ion-icon name="locate"></ion-icon>
+        Cerca de mi</h1>
+      </button>
+      <button ion-item (click)="openPage(friendsPage)">
+        <h1><ion-icon name="map"></ion-icon>
+          Mapa</h1>
+      </button>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<ion-nav [root]="rootPage" #content></ion-nav>

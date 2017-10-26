@@ -1,0 +1,29 @@
+<ion-header>
+
+  <ion-navbar color="uva_color">
+    <ion-title> {{ info.title }} </ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+    <ion-slides pager>
+
+      <ion-slide *ngFor="let slide of slides">
+        <img [src]="slide.img" class="slide-image"/>
+        <h3 class="slide-title" [innerHTML]="slide.title"></h3>
+        <p [innerHTML]="slide.description"></p>
+        <div class="button_link">
+          <ion-fab *ngIf="show_link">
+            <button ion-fab mini color="light" (click)="open_link(slide.info_link)"><ion-icon name="arrow-dropright"></ion-icon></button>
+          </ion-fab>
+        </div>
+
+
+
+      </ion-slide>
+
+    </ion-slides>
+
+</ion-content>
