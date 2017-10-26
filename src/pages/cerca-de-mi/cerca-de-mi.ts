@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, MenuController } from 'ionic-angular';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 
 //Pages
@@ -26,7 +26,9 @@ export class CercaDeMiPage {
   special: any;
   uva_publicaciones: Observable<any[]>;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private afDB: AngularFireDatabase, private iab: InAppBrowser) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private afDB: AngularFireDatabase,
+              private iab: InAppBrowser, public menuCtrl: MenuController) {
+
     this.lugar = this.navParams.data;
     this.uva_lugar = this.lugar.split(",");
 
@@ -55,6 +57,7 @@ export class CercaDeMiPage {
       this.iab.create(publicacion.info.info_link, '_blank','location=no,zoom=no');
     }
   }
+
 
 
 

@@ -18,6 +18,7 @@ import { SliderPage } from "../pages/slider/slider";
 import { EventsPage } from "../pages/events/events";
 import { SimpleEventPage } from "../pages/simple-event/simple-event";
 import { SpecialPage } from "../pages/special/special";
+import { MapsPage } from "../pages/maps/maps";
 
 //PLugins
 import { Geolocation } from '@ionic-native/geolocation';
@@ -41,6 +42,7 @@ export const firebaseConfig = {
     EventsPage,
     SimpleEventPage,
     SpecialPage,
+    MapsPage
   ],
   imports: [
     BrowserModule,
@@ -57,7 +59,8 @@ export const firebaseConfig = {
     SliderPage,
     EventsPage,
     SimpleEventPage,
-    SpecialPage
+    SpecialPage,
+    MapsPage
   ],
   providers: [
     StatusBar,
