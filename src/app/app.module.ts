@@ -3,6 +3,7 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
+import { HttpModule } from "@angular/http";
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -23,6 +24,9 @@ import { MapsPage } from "../pages/maps/maps";
 //PLugins
 import { Geolocation } from '@ionic-native/geolocation';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
+
+//Provider
+import { UserLocationProvider } from "../providers/user-location/user-location";
 
 export const firebaseConfig = {
   apiKey: "AIzaSyCNbTUClYbHJHUhpgc-v5u41z6m6OSnAvo",
@@ -49,7 +53,8 @@ export const firebaseConfig = {
     IonicModule.forRoot(MyApp),
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    HttpModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -68,7 +73,8 @@ export const firebaseConfig = {
     AngularFireDatabase,
     Geolocation,
     InAppBrowser,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    UserLocationProvider
   ]
 })
 export class AppModule {}

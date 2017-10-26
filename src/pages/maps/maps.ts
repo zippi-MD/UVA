@@ -1,25 +1,16 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 
-/**
- * Generated class for the MapsPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+//Providers
+import { UserLocationProvider } from "../../providers/user-location/user-location";
 
-@IonicPage()
 @Component({
   selector: 'page-maps',
   templateUrl: 'maps.html',
 })
 export class MapsPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private userLoc: UserLocationProvider) {
+    this.userLoc.get_location();
   }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad MapsPage');
-  }
-
 }
